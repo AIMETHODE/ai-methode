@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7f5f0"/>
+  <rect x="64" y="64" width="1072" height="502" rx="24" fill="#0c1222" opacity="0.04"/>
+  <text x="120" y="220" fill="#0c1222" font-family="Georgia, serif" font-size="52" font-weight="500">AI-Methode</text>
+  <text x="120" y="290" fill="#9a6b2f" font-family="system-ui, sans-serif" font-size="22" letter-spacing="0.2em">AI-METHODE.DE</text>
+  <text x="120" y="380" fill="#3d4656" font-family="system-ui, sans-serif" font-size="28" max-width="900">Deine eigene KI-Agentur  strukturiert neben dem Job aufbauen.</text>
+</svg>

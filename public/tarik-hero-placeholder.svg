@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="600" viewBox="0 0 480 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="480" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1a2338"/>
+      <stop offset="1" stop-color="#0c1222"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="240" y1="120" x2="240" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c4a35a" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#c4a35a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="600" fill="url(#bg)"/>
+  <ellipse cx="240" cy="380" rx="140" ry="160" fill="url(#glow)"/>
+  <circle cx="240" cy="220" r="72" fill="#2a3348" stroke="#c4a35a" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="240" y="238" text-anchor="middle" fill="#e8e4dc" font-family="Georgia, serif" font-size="28" letter-spacing="0.08em">TD</text>
+  <text x="240" y="560" text-anchor="middle" fill="#8b93a3" font-family="system-ui, sans-serif" font-size="11" letter-spacing="0.14em">Foto folgt</text>
+</svg>

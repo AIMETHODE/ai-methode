@@ -106,8 +106,12 @@ function StatIcon({ type }: { type: (typeof statCards)[number]["icon"] }) {
   );
 }
 
-const avatarColors = ["#b8922a", "#6b7280", "#3b82a0", "#a16b3d"];
-const avatarInitials = ["JK", "SR", "LM", "DF"];
+const avatarPeople = [
+  { initials: "JK", bg: "#b8922a" },
+  { initials: "SR", bg: "#6b7280" },
+  { initials: "LM", bg: "#3b82a0" },
+  { initials: "DF", bg: "#a16b3d" },
+];
 
 /** Eine Spaltenbreite: obere Karte und untere 4 Karten exakt gleich breit (Referenz). */
 const CONTENT = "mx-auto w-full max-w-[1040px]";
@@ -142,29 +146,23 @@ export function WhatIsMethod() {
                 </div>
                 <div className="mt-8 flex flex-wrap items-center gap-3 sm:mt-9">
                   <div className="flex -space-x-2">
-                    {[0, 1, 2, 3].map((i) => (
+                    {avatarPeople.map((p, i) => (
                       <div
                         key={i}
-                        className="relative h-10 w-10 overflow-hidden rounded-full border-[3px] border-white bg-[#e5e5ea] shadow-sm sm:h-11 sm:w-11"
+                        className="flex h-10 w-10 items-center justify-center rounded-full border-[3px] border-white text-[13px] font-bold text-white shadow-sm sm:h-11 sm:w-11 sm:text-[14px]"
+                        style={{ background: p.bg }}
                         aria-hidden
                       >
-                        <Image
-                          src={siteConfig.heroPortraitSrc}
-                          alt=""
-                          fill
-                          className="object-cover"
-                          style={{ objectPosition: `${22 + i * 12}% center` }}
-                          sizes="44px"
-                        />
+                        {p.initials}
                       </div>
                     ))}
                   </div>
                   <p className="hero-inter-card text-[14px] font-normal leading-snug text-ink sm:text-[15px]">
-                    Über{" "}
                     <span className="font-black tracking-tight text-gold text-[1.125rem] sm:text-[1.25rem]">
-                      500+
-                    </span>{" "}
-                    Menschen im Programmumfeld
+                      Große Community
+                    </span>
+                    <br />
+                    von Gleichgesinnten, die dranbleiben.
                   </p>
                 </div>
               </div>

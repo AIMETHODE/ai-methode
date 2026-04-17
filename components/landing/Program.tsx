@@ -100,78 +100,75 @@ const cells: {
   {
     Icon: IconDoc,
     title: "Dein Hochpreis-Angebot",
-    text: "Du baust ein KI-Dienstleistungspaket, das Kunden 3.000\u20135.000\u00A0\u20AC wert ist \u2014 mit klarer Positionierung, die Vertrauen schafft.",
+    text: "Du entwickelst ein KI-Dienstleistungspaket, das Kunden überzeugt und einen Preis rechtfertigt, der sich lohnt.",
   },
   {
     Icon: IconPhone,
-    title: "Kundengewinnung ohne Kaltakquise",
-    text: "Wie du mit der richtigen Ansprache qualifizierte Erstgespräche bekommst — ohne Spam, ohne Betteln, ohne peinliche DMs.",
+    title: "Kunden gewinnen durch Kaltakquise",
+    text: "Du lernst, wie du systematisch Erstgespräche buchst. Strukturiert, direkt und ohne Umwege.",
   },
   {
     Icon: IconCheck,
-    title: "Verkaufen auf Augenh\u00F6he",
-    text: "Gespr\u00E4chsleitf\u00E4den, die aus Interessenten zahlende Kunden machen \u2014 seri\u00F6s, strukturiert und mit starken Abschlussquoten.",
+    title: "Verkaufen auf Augenhöhe",
+    text: "Gesprächsleitfäden, die aus Interessenten zahlende Kunden machen. Seriös, strukturiert, ohne Verkäufer-Feeling.",
   },
   {
     Icon: IconSparkles,
-    title: "KI als Wettbewerbsvorteil",
-    text: "Setze KI so ein, dass du in Stunden lieferst, wof\u00FCr andere Tage brauchen \u2014 deine Kunden sp\u00FCren den Unterschied sofort.",
+    title: "KI als dein Wettbewerbsvorteil",
+    text: "Du lieferst in Stunden, was andere Tage brauchen. Deine Kunden merken den Unterschied sofort.",
   },
   {
     Icon: IconClock,
     title: "Nebenberuflich skalierbar",
-    text: "Der gesamte Aufbau funktioniert mit 1\u20132\u00A0h am Tag. Kein K\u00FCndigen, kein Risiko \u2014 bis du bereit bist, voll durchzustarten.",
+    text: "1 bis 2 Stunden am Tag reichen für den Aufbau. Kein Kündigen, kein Risiko. Du startest neben dem Job.",
   },
   {
     Icon: IconTrend,
     title: "Planbares Einkommen aufbauen",
-    text: "Von der ersten Anfrage bis zum wiederkehrenden Mandat: ein System, das dir Monat f\u00FCr Monat Umsatz bringt \u2014 messbar und vorhersehbar.",
+    text: "Von der ersten Anfrage bis zum wiederkehrenden Kunden. Ein System, das dir Monat für Monat Umsatz bringt.",
   },
 ];
 
 function DeviceShowcase({ variant }: { variant: "a" | "b" }) {
-  const isA = variant === "a";
+  if (variant === "a") {
+    return <BookingToPaymentShowcase />;
+  }
+  return <RecurringRevenueShowcase />;
+}
+
+/** Recurring Revenue Dashboard: wiederkehrende Zahlungen im Premium-Banking. */
+function RecurringRevenueShowcase() {
   return (
-    <div
-      className={`relative flex min-h-[180px] items-center justify-center overflow-hidden rounded-[1.1rem] border border-black/[0.05] p-5 sm:min-h-[220px] sm:rounded-[1.35rem] sm:p-8 lg:min-h-[210px] ${
-        isA ? "bg-[#e9e5df]" : "bg-[#e4e0d9]"
-      }`}
-    >
-      <div
-        className={`relative flex items-end ${isA ? "gap-3 sm:gap-5" : "gap-4 sm:gap-6"} ${isA ? "translate-x-0" : "-translate-x-1"}`}
-      >
-        {/* Phone */}
-        <div
-          className={`relative z-[2] w-[4.5rem] shrink-0 rounded-[1.15rem] border border-black/[0.07] bg-white p-[5px] shadow-[0_18px_40px_-12px_rgba(0,0,0,0.22)] sm:w-[5rem] ${isA ? "-rotate-[10deg]" : "-rotate-[7deg]"}`}
-        >
-          <div className="aspect-[9/18] w-full overflow-hidden rounded-[0.85rem] bg-gradient-to-b from-[#f4f6f8] via-[#eef1f5] to-[#dfe6ee]">
-            <div className="mx-auto mt-2 h-1 w-8 rounded-full bg-black/[0.08]" />
-            <div className="mx-2 mt-3 space-y-1.5">
-              <div className="h-1.5 w-3/4 rounded bg-black/[0.06]" />
-              <div className="h-1.5 w-1/2 rounded bg-black/[0.05]" />
-              <div className="mt-2 h-16 rounded-lg bg-gradient-to-br from-[#c9a227]/25 to-[#b8922a]/15" />
-            </div>
-          </div>
-        </div>
-        {/* Tablet */}
-        <div
-          className={`relative z-[1] w-[6.5rem] shrink-0 rounded-[0.95rem] border border-black/[0.07] bg-white p-[6px] shadow-[0_22px_48px_-14px_rgba(0,0,0,0.2)] sm:w-[7.25rem] ${isA ? "rotate-[6deg] -translate-y-1" : "rotate-[9deg] translate-y-0.5"}`}
-        >
-          <div className="aspect-[4/3] w-full overflow-hidden rounded-[0.55rem] bg-gradient-to-br from-[#f8f9fb] to-[#e8ecf2]">
-            <div className="flex gap-1.5 border-b border-black/[0.06] px-2 py-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#c9a227]/70" />
-              <span className="h-1.5 w-8 rounded bg-black/[0.06]" />
-            </div>
-            <div className="p-2">
-              <div className="mb-1.5 h-1 w-2/3 rounded bg-black/[0.07]" />
-              <div className="grid grid-cols-2 gap-1">
-                <div className="h-10 rounded-md bg-white shadow-sm ring-1 ring-black/[0.04]" />
-                <div className="h-10 rounded-md bg-gradient-to-br from-[#d4b44a]/20 to-[#c9a227]/20" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="relative flex min-h-[200px] items-center justify-center overflow-hidden rounded-[1.1rem] border border-black/[0.05] bg-gradient-to-br from-[#f5ecd8] via-[#efe4c8] to-[#e7d9b4] sm:min-h-[240px] sm:rounded-[1.35rem] lg:min-h-[210px]">
+      <div className="pointer-events-none absolute -left-6 -top-6 h-28 w-28 rounded-full bg-[#f5e6b8]/60 blur-2xl" aria-hidden />
+      <div className="pointer-events-none absolute -bottom-10 -right-6 h-32 w-32 rounded-full bg-[#d4b44a]/40 blur-2xl" aria-hidden />
+
+      <Image
+        src="/program-recurring-revenue.png"
+        alt="Wiederkehrende Zahlungen: monatliche Mandate"
+        fill
+        className="relative z-[1] object-contain object-center p-2 drop-shadow-[0_18px_28px_rgba(120,95,30,0.25)]"
+        sizes="(max-width: 1024px) 100vw, 33vw"
+      />
+    </div>
+  );
+}
+
+/** Zahlungs-Mockup: „Zahlung eingegangen +3.500 €" — echtes Bild. */
+function BookingToPaymentShowcase() {
+  return (
+    <div className="relative flex min-h-[200px] items-center justify-center overflow-hidden rounded-[1.1rem] border border-black/[0.05] bg-gradient-to-br from-[#f5ecd8] via-[#efe4c8] to-[#e7d9b4] sm:min-h-[240px] sm:rounded-[1.35rem] lg:min-h-[210px]">
+      {/* warme Licht-Glows fürs Ambiente */}
+      <div className="pointer-events-none absolute -left-6 -top-6 h-28 w-28 rounded-full bg-[#f5e6b8]/60 blur-2xl" aria-hidden />
+      <div className="pointer-events-none absolute -bottom-10 -right-6 h-32 w-32 rounded-full bg-[#d4b44a]/40 blur-2xl" aria-hidden />
+
+      <Image
+        src="/program-payment-phone.png"
+        alt="Zahlung eingegangen: 3.500 €"
+        fill
+        className="relative z-[1] object-contain object-center p-2 drop-shadow-[0_18px_28px_rgba(120,95,30,0.25)]"
+        sizes="(max-width: 1024px) 100vw, 33vw"
+      />
     </div>
   );
 }
@@ -196,15 +193,18 @@ function ProgramCard({
 
 function PortraitTile() {
   return (
-    <div className="relative h-full min-h-[200px] overflow-hidden rounded-[1.1rem] border border-black/[0.06] bg-[#e8e4df] shadow-[0_2px_28px_rgba(0,0,0,0.05)] sm:min-h-[260px] sm:rounded-[1.35rem] lg:min-h-[210px]">
+    <div className="relative h-full min-h-[200px] overflow-hidden rounded-[1.1rem] border border-black/[0.06] bg-gradient-to-br from-[#f5ecd8] via-[#efe4c8] to-[#e7d9b4] shadow-[0_2px_28px_rgba(0,0,0,0.05)] sm:min-h-[260px] sm:rounded-[1.35rem] lg:min-h-[210px]">
+      {/* warme Licht-Glows */}
+      <div className="pointer-events-none absolute -left-6 -top-6 h-24 w-24 rounded-full bg-[#f5e6b8]/60 blur-2xl" aria-hidden />
+      <div className="pointer-events-none absolute -bottom-8 -right-4 h-28 w-28 rounded-full bg-[#d4b44a]/40 blur-2xl" aria-hidden />
+
       <Image
-        src={siteConfig.heroPortraitSrc}
-        alt={siteConfig.founderName}
+        src="/program-calendar-before-after.png"
+        alt="Kalender vorher und nachher: von leer zu voll gebucht"
         fill
-        className="object-cover object-[center_18%]"
+        className="relative z-[1] object-contain object-center p-2 drop-shadow-[0_14px_24px_rgba(120,95,30,0.2)]"
         sizes="(max-width: 1024px) 100vw, 33vw"
       />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
     </div>
   );
 }
@@ -221,8 +221,8 @@ export function Program() {
             <span className={accent}>{siteConfig.methodName}</span>
           </h2>
           <p className="mt-4 text-[15px] leading-relaxed text-ink-muted sm:text-[17px]">
-            Alles, was du brauchst, um von null auf eine profitable KI-Agentur zu kommen — Modul für Modul,
-            mit persönlicher Begleitung und erprobten Vorlagen.
+            Kein Theorie-Überfluss. Nur was du wirklich brauchst, um nebenberuflich eine KI-Agentur
+            aufzubauen, die Geld verdient.
           </p>
         </header>
 

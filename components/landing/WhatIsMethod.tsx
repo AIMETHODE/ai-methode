@@ -9,21 +9,21 @@ const statCards: {
 }[] = [
   {
     icon: "users",
-    stat: "500+",
-    title: "Im Programmumfeld",
-    text: "Hunderte Menschen bauen bereits mit der AI-Methode auf.",
+    stat: "24/7",
+    title: "Community",
+    text: "Du baust nicht alleine. Austausch und Unterstützung jederzeit.",
   },
   {
     icon: "chart",
     stat: "1:1",
     title: "Persönliche Betreuung",
-    text: "Kein Massenkurs — du bekommst individuelle Begleitung.",
+    text: "Kein Massenkurs. Du bekommst individuelle Begleitung.",
   },
   {
     icon: "award",
     stat: "A–Z",
     title: "Komplettes System",
-    text: "Angebot, Akquise, Abschluss — alles in einem Programm.",
+    text: "Positionierung, Angebot, Akquise. Alles in einem Programm.",
   },
   {
     icon: "clock",
@@ -106,6 +106,9 @@ function StatIcon({ type }: { type: (typeof statCards)[number]["icon"] }) {
   );
 }
 
+const avatarColors = ["#b8922a", "#6b7280", "#3b82a0", "#a16b3d"];
+const avatarInitials = ["JK", "SR", "LM", "DF"];
+
 /** Eine Spaltenbreite: obere Karte und untere 4 Karten exakt gleich breit (Referenz). */
 const CONTENT = "mx-auto w-full max-w-[1040px]";
 
@@ -124,18 +127,17 @@ export function WhatIsMethod() {
                 </h2>
                 <div className="hero-inter-card mt-4 space-y-4 text-[16px] font-normal leading-[1.72] text-ink-muted antialiased sm:text-[17px] sm:leading-[1.75]">
                   <p>
-                    Ein vollständiges Aufbau-System für deine eigene KI-Agentur: von der
-                    Positionierung über das Angebot bis zu planbar zahlenden Kunden — ohne
-                    Vorkenntnisse, ohne Rätselraten.
+                    Kein Kurs. Ein komplettes System für deine KI-Agentur.
+                    Von der Positionierung bis zum ersten zahlenden Kunden.
                   </p>
                   <p>
-                    Du bekommst exakt die Strategien, Vorlagen und persönliche Begleitung,
-                    die du brauchst, um KI-Dienstleistungen professionell zu verkaufen — auch
-                    wenn du noch im Hauptjob bist.
+                    Du bekommst alles, was du brauchst: Strategien, Vorlagen und persönliche
+                    Begleitung — damit du KI-Dienstleistungen professionell verkaufst,
+                    auch neben dem Hauptjob.
                   </p>
                   <p>
-                    Das Ergebnis: ein schlankes, wiederholbares Business-Modell, das dir
-                    ein planbares Zusatzeinkommen ermöglicht — mit Klarheit statt Chaos.
+                    Das Ziel: ein schlankes Business, das sich wiederholt.
+                    Planbares Zusatzeinkommen ohne Chaos.
                   </p>
                 </div>
                 <div className="mt-8 flex flex-wrap items-center gap-3 sm:mt-9">
@@ -188,16 +190,17 @@ export function WhatIsMethod() {
           {statCards.map((c) => (
             <div
               key={c.title}
-              className="flex flex-col rounded-2xl border border-black/[0.06] bg-canvas-muted px-5 py-5 text-left shadow-none sm:px-6 sm:py-7"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-black/[0.06] bg-white px-5 py-6 text-left shadow-[0_2px_20px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-[0_6px_28px_rgba(0,0,0,0.08)] sm:px-6 sm:py-7"
             >
-              <div className="flex items-center gap-2.5">
-                <StatIcon type={c.icon} />
-                <span className="font-sans text-[1.35rem] font-black leading-[0.95] tracking-[-0.03em] text-gold sm:text-[1.5rem] lg:text-[1.625rem]">
-                  {c.stat}
-                </span>
+              <div className="absolute right-4 top-4 font-sans text-[2.5rem] font-black leading-none tracking-tighter text-gold/[0.08] sm:text-[3rem]">
+                {c.stat}
               </div>
-              <p className="mt-2 text-[15px] font-bold leading-snug text-ink sm:text-[16px]">{c.title}</p>
-              <p className="mt-1.5 text-xs leading-relaxed text-ink-muted sm:text-[13px] sm:leading-snug">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f5e6b8]/60 sm:h-11 sm:w-11">
+                <StatIcon type={c.icon} />
+              </div>
+              <p className="mt-3 text-[1.1rem] font-black leading-tight tracking-tight text-ink sm:text-[1.2rem]">{c.stat}</p>
+              <p className="mt-0.5 text-[14px] font-semibold leading-snug text-ink sm:text-[15px]">{c.title}</p>
+              <p className="mt-2 text-[12px] leading-relaxed text-ink-muted sm:text-[13px]">
                 {c.text}
               </p>
             </div>

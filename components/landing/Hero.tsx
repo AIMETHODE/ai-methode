@@ -8,10 +8,10 @@ import { CTAButton } from "@/components/CTAButton";
 import { PlayTriangle } from "@/components/ui/PlayTriangle";
 
 const bullets = [
-  "Klares System statt Chaos — du weißt jeden Tag, was der nächste Schritt ist",
-  "1–2 Stunden täglich reichen — neben Job, Familie und allem anderen",
-  "Kein Vorwissen nötig — persönliche Begleitung auf jedem Schritt",
-  "Direkte Antworten, wenn du nicht weiterkommst — kein Alleingang",
+  "Klares System statt Chaos. Du weißt jeden Tag, was der nächste Schritt ist.",
+  "1 bis 2 Stunden täglich reichen. Neben Job, Familie und allem anderen.",
+  "Kein Vorwissen nötig. Persönliche Begleitung auf jedem Schritt.",
+  "Direkte Antworten, wenn du nicht weiterkommst. Kein Alleingang.",
 ];
 
 export function Hero() {
@@ -24,7 +24,7 @@ export function Hero() {
           transition={{ duration: 0.45 }}
         >
           <h1 className="font-sans text-[1.75rem] font-bold leading-[1.14] tracking-tight text-ink sm:text-5xl lg:text-[3.1rem]">
-            Deine <span className="text-gold-hero">KI-Agentur</span> 2026 —{" "}
+            Deine <span className="text-gold-hero">KI-Agentur</span> 2026{" "}
             nebenberuflich, ohne Risiko.
           </h1>
           <ul className="mt-8 space-y-4">

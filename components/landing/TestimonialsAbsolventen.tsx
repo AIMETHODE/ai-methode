@@ -23,7 +23,7 @@ export function TestimonialsAbsolventen() {
               Das sagen unsere <span className="text-gold">Teilnehmer</span>
             </>
           }
-          subtitle="Echte Menschen, echte Resultate \u2014 keine leeren Versprechen."
+          subtitle="Erfahrungen von Teilnehmern, die mit der AI-Methode gestartet sind."
         />
         <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6">
           {items.map((x) => (

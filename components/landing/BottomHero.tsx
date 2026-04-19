@@ -8,9 +8,9 @@ import { CTAButton } from "@/components/CTAButton";
 const BG_SRC = "/bottom-hero-city.jpg";
 
 const pills = [
-  "Kostenlose Strategie-Session",
-  "Individueller Fahrplan für dein KI-Business",
-  "Erfahre, ob die AI-Methode zu dir passt",
+  "Kostenloses Erstgespräch ohne Kaufzwang",
+  "Wir schauen gemeinsam ob es passt",
+  "Bei Interesse bekommst du deinen individuellen Plan",
 ];
 
 export function BottomHero() {
@@ -41,10 +41,12 @@ export function BottomHero() {
               transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             >
               <h2 className="font-sans text-[1.5rem] font-bold leading-[1.12] tracking-tight text-white drop-shadow-md sm:text-4xl sm:leading-tight">
-                Bereit für deine eigene KI-Agentur?
+                Deine KI-Agentur wartet.
+                <br />
+                Fang heute an.
               </h2>
               <p className="mt-2 max-w-md text-[14px] leading-snug text-white/90 drop-shadow sm:mt-3 sm:text-[17px]">
-                Sichere dir jetzt dein kostenloses Erstgespräch und erfahre, wie du in den nächsten 30 Tagen starten kannst.
+                Buch dir jetzt dein kostenloses Erstgespräch und erfahre ob die AI-Methode zu dir passt.
               </p>
               <div className="mt-5 flex max-w-md flex-col gap-2 sm:mt-6 sm:gap-2.5">
                 {pills.map((p, i) => (

@@ -2,28 +2,28 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 const faqs = [
   {
-    q: "Brauche ich technische Vorkenntnisse oder KI-Erfahrung?",
-    a: "Nein. Die AI-Methode ist so aufgebaut, dass du ohne Programmierkenntnisse starten kannst. Wir zeigen dir alles Schritt f\u00FCr Schritt \u2014 von der Positionierung bis zum ersten zahlenden Kunden.",
+    q: "Brauche ich Vorkenntnisse?",
+    a: "Nein. Kein Vorwissen, keine Technik, keine Erfahrung mit KI nötig. Du lernst alles was du zum Start brauchst.",
   },
   {
-    q: "Wie viel Zeit muss ich investieren?",
-    a: "1\u20132 Stunden am Tag reichen f\u00FCr den Aufbau. Das Programm ist explizit f\u00FCr Berufst\u00E4tige designed, die nebenberuflich starten wollen \u2014 ohne ihren Hauptjob zu gef\u00E4hrden.",
+    q: "Ist das neben dem Job machbar?",
+    a: "Ja. Das Programm ist für Menschen gebaut die nebenberuflich starten. Du bestimmst dein Tempo.",
   },
   {
-    q: "Was unterscheidet die AI-Methode von Onlinekursen?",
-    a: "Pers\u00F6nliche 1:1-Begleitung statt anonymer Videokurs. Du bekommst individuelle Strategien, direktes Feedback und einen Mentor, der dein Business mit dir aufbaut \u2014 nicht nur erkl\u00E4rt.",
+    q: "Was macht die AI-Methode anders als ein Kurs?",
+    a: "Kein anonymes Video das du alleine durchklickst. Du bekommst persönliche Begleitung, direktes Feedback und einen Ansprechpartner wenn du nicht weiterkommst.",
   },
   {
-    q: "Was kostet die Teilnahme?",
-    a: "Die AI-Methode ist ein High-Ticket-Programm mit pers\u00F6nlicher Betreuung. Die genauen Details besprechen wir im kostenlosen Erstgespr\u00E4ch \u2014 dort findest du heraus, ob es f\u00FCr dich passt.",
+    q: "Für wen ist das Programm?",
+    a: "Für alle die nebenberuflich starten wollen. Egal ob angestellt, selbstständig, Student oder Elternteil. Vorwissen spielt keine Rolle.",
   },
   {
-    q: "Wie schnell kann ich erste Ergebnisse erwarten?",
-    a: "Viele Teilnehmer gewinnen innerhalb der ersten Wochen ihren ersten Kunden. Das h\u00E4ngt nat\u00FCrlich von deiner Umsetzung ab \u2014 aber unser System ist darauf ausgelegt, schnell ins Handeln zu kommen.",
+    q: "Wie läuft der Start ab?",
+    a: "Zuerst ein kostenloses Erstgespräch. Wir schauen gemeinsam ob es passt. Wenn ja, erstellen wir in einem zweiten Gespräch deinen individuellen Plan.",
   },
   {
-    q: "Ist das seri\u00F6s oder wieder so ein \u201ESchnell-reich-werden\u201C-Ding?",
-    a: "Wir versprechen dir keinen Reichtum \u00FCber Nacht. Was wir dir geben: ein erprobtes System, pers\u00F6nliche Begleitung und die Werkzeuge, die du brauchst. Dein Ergebnis h\u00E4ngt von deinem Einsatz ab.",
+    q: "Bekomme ich laufende Unterstützung?",
+    a: "Ja. Du hast Zugang zur Community, persönliche Betreuung und direkte Antworten wenn du irgendwo nicht weiterkommst.",
   },
 ];
 
@@ -34,10 +34,10 @@ export function FAQ() {
         <SectionHeading
           title={
             <>
-              H\u00E4ufig gestellte <span className="text-gold">Fragen</span>
+              Häufig gestellte <span className="text-gold">Fragen</span>
             </>
           }
-          subtitle="Alles, was du wissen musst \u2014 bevor du dein Erstgespr\u00E4ch buchst."
+          subtitle="Alles was du wissen willst bevor du dein Erstgespräch buchst."
         />
         <div className="mt-10 space-y-3">
           {faqs.map((item) => (

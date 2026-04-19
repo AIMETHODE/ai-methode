@@ -8,33 +8,33 @@ import { RoadmapIllustration } from "@/components/landing/roadmap/roadmap-illust
 const steps = [
   {
     n: 1,
-    title: "Grundlagen verstehen",
-    text: "Du bekommst einen klaren Überblick über die ai-Methode, den typischen Ablauf und welche Bausteine deine KI-Agentur wirklich braucht — ohne Buzzwords, mit Fokus auf das, was du danach konkret umsetzt.",
+    title: "Positionierung & Nische",
+    text: "Du weißt wer deine Kunden sind, was du anbietest und warum jemand bei dir kauft.",
   },
   {
     n: 2,
-    title: "Technische Einrichtung & Vorbereitung",
-    text: "Wir richten Tools und Zugänge schlank ein: nur das, was du für Kommunikation, Angebote und Nachweise brauchst. So bleibst du vom Software-Sumpf weg und wirst schneller produktiv, statt nur zu konfigurieren.",
+    title: "Angebot entwickeln",
+    text: "Du baust ein fertiges KI-Dienstleistungspaket mit klarem Preis und klarem Versprechen.",
   },
   {
     n: 3,
-    title: "Inhalte strukturieren",
-    text: "Du strukturierst Angebote, Leistungsversprechen und Lieferung so, dass Kund:innen sofort verstehen, was sie bekommen — mit einfachen Vorlagen, die du an dein Angebot anpasst und immer wieder verwenden kannst.",
+    title: "Erste Kunden ansprechen",
+    text: "Du lernst wie du systematisch Erstgespräche buchst — direkt, strukturiert, ohne Umwege.",
   },
   {
     n: 4,
-    title: "Anwenden in der Praxis",
-    text: "Mit gezielten Übungen und ersten echten Gesprächen übst du im sicheren Rahmen. Du bekommst ehrliches Feedback, damit du sicherer wirst, bevor du live gehst — ohne Druck und ohne Show.",
+    title: "Erstgespräch & Abschluss",
+    text: "Du führst Gespräche mit einem erprobten Leitfaden der aus Interesse eine Entscheidung macht.",
   },
   {
     n: 5,
-    title: "Routinen & Zeit",
-    text: "Du legst wiederkehrende Aufgaben und feste Fokus-Zeiten fest — auch wenn du nur wenige Stunden pro Woche hast. So bleibt der Aufbau messbar: weniger „wann mache ich das?“, mehr klare nächste Schritte.",
+    title: "Lieferung mit KI",
+    text: "Du lieferst schnell und professionell — mit KI als deinem Wettbewerbsvorteil gegenüber anderen.",
   },
   {
     n: 6,
-    title: "Einfache & effektive Prozesse",
-    text: "Am Ende hast du ein einfaches, wiederholbares System für Anfragen, Angebote und Nachweise im Alltag. Weniger Chaos im Kopf, mehr Klarheit für dich und deine Kund:innen — ohne komplizierte Super-Strukturen.",
+    title: "Wiederkehrende Mandate",
+    text: "Aus einem Kunden werden monatliche Einnahmen. Planbar, wiederholbar, skalierbar.",
   },
 ];
 
@@ -136,11 +136,11 @@ export function Roadmap() {
           <SectionHeading
             title={
               <>
-                Dein Fahrplan zur{" "}
+                Dein Fahrplan zur eigenen{" "}
                 <span className="text-gold">KI-Agentur</span>
               </>
             }
-            subtitle="Klare Schritte — du bestimmst das Tempo."
+            subtitle="Sechs Schritte. Klare Reihenfolge. Kein Rätselraten."
             size="large"
           />
         </motion.div>

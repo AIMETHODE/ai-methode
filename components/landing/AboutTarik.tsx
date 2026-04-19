@@ -3,9 +3,9 @@ import { siteConfig } from "@/lib/site-config";
 import { CTAButton } from "@/components/CTAButton";
 
 const bullets: { t: string; d: string; icon: "chart" | "medal" | "user" }[] = [
-  { t: "Bewiesenes System", d: "500+ Menschen im Programmumfeld sprechen für sich", icon: "chart" },
-  { t: "Persönliche Betreuung", d: "1:1-Begleitung statt anonymer Massenkurs", icon: "medal" },
-  { t: "Praxis vor Theorie", d: "Du setzt ab Tag 1 um — nicht erst nach Wochen", icon: "user" },
+  { t: "Bewiesenes System", d: "In der Praxis entwickelt und immer weiter verfeinert.", icon: "chart" },
+  { t: "Persönliche Betreuung", d: "1:1-Begleitung statt anonymer Massenkurs.", icon: "medal" },
+  { t: "Praxis vor Theorie", d: "Du setzt ab Tag 1 um. Nicht erst nach Wochen.", icon: "user" },
 ];
 
 function BulletIcon({ type }: { type: "chart" | "medal" | "user" }) {
@@ -56,8 +56,8 @@ export function AboutTarik() {
               </h2>
               <p className="hero-inter-card mb-9 max-w-xl text-[15px] leading-[1.65] text-ink-muted">
                 {siteConfig.founderName} hat die AI-Methode entwickelt, um Menschen wie dir einen
-                klaren, wiederholbaren Weg in die KI-Branche zu geben — mit persönlicher Begleitung
-                statt generischen Onlinekursen.
+                klaren, wiederholbaren Weg in die KI-Branche zu geben. Persönliche Begleitung statt
+                generischer Onlinekurs.
               </p>
               <ul className="space-y-7">
                 {bullets.map((b) => (
@@ -93,7 +93,7 @@ export function AboutTarik() {
                   <div className="mt-1 h-14 w-0.5 shrink-0 rounded-full bg-gold" aria-hidden />
                   <div>
                     <p className="text-[15px] font-medium italic leading-relaxed text-white">
-                      „Du brauchst kein Talent — du brauchst ein System und den Willen, es durchzuziehen.“
+                      „Du brauchst kein Talent. Du brauchst ein System und den Willen es durchzuziehen.“
                     </p>
                     <p className="mt-4 font-sans text-[17px] font-semibold tracking-tight text-gold">
                       {siteConfig.founderName}

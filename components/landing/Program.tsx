@@ -147,7 +147,7 @@ function RecurringRevenueShowcase() {
         src="/program-recurring-revenue.png"
         alt="Wiederkehrende Zahlungen: monatliche Mandate"
         fill
-        className="relative z-[1] object-contain object-center p-2 drop-shadow-[0_18px_28px_rgba(120,95,30,0.25)]"
+        className="relative z-[1] object-cover object-center"
         sizes="(max-width: 1024px) 100vw, 33vw"
       />
     </div>
@@ -166,7 +166,7 @@ function BookingToPaymentShowcase() {
         src="/program-payment-phone.png"
         alt="Zahlung eingegangen: 3.500 €"
         fill
-        className="relative z-[1] object-contain object-center p-2 drop-shadow-[0_18px_28px_rgba(120,95,30,0.25)]"
+        className="relative z-[1] object-cover object-[center_28%]"
         sizes="(max-width: 1024px) 100vw, 33vw"
       />
     </div>
@@ -202,7 +202,7 @@ function PortraitTile() {
         src="/program-calendar-before-after.png"
         alt="Kalender vorher und nachher: von leer zu voll gebucht"
         fill
-        className="relative z-[1] object-contain object-center p-2 drop-shadow-[0_14px_24px_rgba(120,95,30,0.2)]"
+        className="relative z-[1] object-cover object-center"
         sizes="(max-width: 1024px) 100vw, 33vw"
       />
     </div>

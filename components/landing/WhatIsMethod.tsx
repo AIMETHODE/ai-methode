@@ -170,11 +170,11 @@ export function WhatIsMethod() {
             <div className="relative h-full min-h-[240px] w-full sm:min-h-[280px] md:min-h-0">
               <div className="absolute inset-0 bg-[#e8e8ed]">
                 <Image
-                  src={siteConfig.workPortraitSrc}
+                  src="/tarik-methode.png"
                   alt={`${siteConfig.founderName} — AI-Methode`}
                   fill
                   className="object-cover"
-                  style={{ objectPosition: siteConfig.aboutPortraitObjectPosition }}
+                  style={{ objectPosition: "center center" }}
                   sizes="(max-width: 768px) 100vw, 520px"
                   priority={false}
                 />

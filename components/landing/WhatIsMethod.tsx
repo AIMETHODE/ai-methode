@@ -106,13 +106,6 @@ function StatIcon({ type }: { type: (typeof statCards)[number]["icon"] }) {
   );
 }
 
-const avatarPeople = [
-  { initials: "JK", bg: "#b8922a" },
-  { initials: "SR", bg: "#6b7280" },
-  { initials: "LM", bg: "#3b82a0" },
-  { initials: "DF", bg: "#a16b3d" },
-];
-
 /** Eine Spaltenbreite: obere Karte und untere 4 Karten exakt gleich breit (Referenz). */
 const CONTENT = "mx-auto w-full max-w-[1040px]";
 
@@ -144,19 +137,7 @@ export function WhatIsMethod() {
                     Planbares Zusatzeinkommen ohne Chaos.
                   </p>
                 </div>
-                <div className="mt-8 flex flex-wrap items-center gap-3 sm:mt-9">
-                  <div className="flex -space-x-2">
-                    {avatarPeople.map((p, i) => (
-                      <div
-                        key={i}
-                        className="flex h-10 w-10 items-center justify-center rounded-full border-[3px] border-white text-[13px] font-bold text-white shadow-sm sm:h-11 sm:w-11 sm:text-[14px]"
-                        style={{ background: p.bg }}
-                        aria-hidden
-                      >
-                        {p.initials}
-                      </div>
-                    ))}
-                  </div>
+                <div className="mt-8 sm:mt-9">
                   <p className="hero-inter-card text-[14px] font-normal leading-snug text-ink sm:text-[15px]">
                     <span className="font-black tracking-tight text-gold text-[1.125rem] sm:text-[1.25rem]">
                       Große Community

@@ -8,13 +8,11 @@ type MediaItem = {
 };
 
 const items: MediaItem[] = [
-  { label: "Medienartikel 1" },
   {
     src: "/media-gewinner.png",
     alt: "Gewinner.de — Tarik Dzelic im Interview: Was hinter dem Erfolg der AI-Methode steckt",
-    label: "Medienartikel 2",
+    label: "Gewinner.de",
   },
-  { label: "Medienartikel 3" },
 ];
 
 export function MediaPlaceholder() {
@@ -29,22 +27,23 @@ export function MediaPlaceholder() {
           }
           subtitle="Interviews, Podcasts und Auftritte rund um KI, Business-Aufbau und die AI-Methode."
         />
-        <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-4">
+        <div className="mx-auto mt-8 grid max-w-xl gap-3 sm:mt-10 sm:gap-4">
           {items.map((item, i) => (
             <div
               key={i}
-              className="relative aspect-[4/3] overflow-hidden rounded-[16px] bg-gradient-to-br from-[#ececee] to-[#d5d5db] ring-1 ring-black/[0.06]"
+              className="relative overflow-hidden rounded-[16px] ring-1 ring-black/[0.06]"
             >
               {item.src ? (
                 <Image
                   src={item.src}
                   alt={item.alt ?? item.label}
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  width={1004}
+                  height={1024}
+                  className="h-auto w-full"
+                  sizes="(max-width: 640px) 100vw, 576px"
                 />
               ) : (
-                <div className="flex h-full items-center justify-center text-[13px] font-medium text-ink-muted">
+                <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-[#ececee] to-[#d5d5db] text-[13px] font-medium text-ink-muted">
                   {item.label}
                 </div>
               )}

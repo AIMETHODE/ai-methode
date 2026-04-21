@@ -26,5 +26,5 @@ export const siteConfig = {
    * kleinere Werte (z. B. 10%) verankern stärker am oberen Bildrand → Gesicht wirkt oft zu tief.
    */
   aboutPortraitObjectPosition:
-    process.env.NEXT_PUBLIC_ABOUT_PORTRAIT_POSITION?.trim() || "center 25%",
+    process.env.NEXT_PUBLIC_ABOUT_PORTRAIT_POSITION?.trim() || "center center",
 } as const;

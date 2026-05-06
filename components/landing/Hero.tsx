@@ -64,9 +64,18 @@ export function Hero() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-black/25" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="flex h-[56px] w-[56px] items-center justify-center rounded-full bg-white/95 shadow-lg ring-4 ring-white/80 backdrop-blur-[2px] sm:h-[72px] sm:w-[72px]">
+              <button
+                type="button"
+                aria-label="Video abspielen"
+                className="group/play relative flex h-[56px] w-[56px] items-center justify-center rounded-full bg-white/95 shadow-lg ring-4 ring-white/80 backdrop-blur-[2px] transition-transform duration-300 hover:scale-105 sm:h-[72px] sm:w-[72px]"
+              >
+                <span
+                  className="absolute inset-0 -z-10 rounded-full opacity-0 blur-xl transition-opacity duration-300 group-hover/play:opacity-90"
+                  style={{ background: "var(--brand-gradient)" }}
+                  aria-hidden
+                />
                 <PlayTriangle />
-              </span>
+              </button>
             </div>
             <p className="absolute bottom-3 left-3 right-3 rounded-lg bg-black/40 px-3 py-2 text-center text-[12px] font-medium text-white backdrop-blur-sm">
               Erfahre, wie der Aufbau funktioniert

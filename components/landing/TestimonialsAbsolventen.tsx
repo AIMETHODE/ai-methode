@@ -1,10 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PlayTriangle } from "@/components/ui/PlayTriangle";
 
-const JULIAN_VIDEO_URL = "https://www.youtube.com/watch?v=yWTGWVXv88Q";
+const JULIAN_VIDEO_ID = "yWTGWVXv88Q";
 const JULIAN_VIDEO_THUMBNAIL = "https://img.youtube.com/vi/yWTGWVXv88Q/maxresdefault.jpg";
 
 /* ────────────────────────────────────────────────────────────
@@ -48,6 +49,8 @@ const julianResults = [
 ];
 
 function HeroTestimonial() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 22 }}
@@ -59,39 +62,52 @@ function HeroTestimonial() {
       <div className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[420px_1fr] lg:items-center lg:gap-10 lg:p-8">
         {/* ── Video (kompakt, Querformat) ── */}
         <div className="relative aspect-video overflow-hidden rounded-[14px] lg:rounded-[16px]">
-          <a
-            href={JULIAN_VIDEO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="YouTube-Testimonial von Julian D. öffnen"
-            className="group/play block h-full w-full"
-          >
-            <img
-              src={JULIAN_VIDEO_THUMBNAIL}
-              alt="Thumbnail vom YouTube-Testimonial von Julian D."
-              className="h-full w-full object-cover transition-transform duration-500 group-hover/play:scale-[1.02]"
+          {isVideoOpen ? (
+            <iframe
+              className="h-full w-full"
+              src={`https://www.youtube-nocookie.com/embed/${JULIAN_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1`}
+              title="YouTube-Testimonial von Julian D."
               loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/58 via-black/18 to-black/22" />
-            <span
-              className="absolute left-1/2 top-1/2 flex h-[58px] w-[58px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 ring-1 ring-white/40 transition-transform duration-300 group-hover/play:scale-105"
-              style={{
-                boxShadow:
-                  "0 0 0 6px rgba(255,255,255,0.16), 0 0 28px -2px rgba(212,180,74,0.7)",
-              }}
+          ) : (
+            <button
+              type="button"
+              onClick={() => setIsVideoOpen(true)}
+              aria-label="YouTube-Testimonial von Julian D. direkt abspielen"
+              className="group/play block h-full w-full"
             >
-              <PlayTriangle className="ml-0.5" />
-            </span>
-          </a>
+              <img
+                src={JULIAN_VIDEO_THUMBNAIL}
+                alt="Thumbnail vom YouTube-Testimonial von Julian D."
+                className="h-full w-full object-cover transition-transform duration-500 group-hover/play:scale-[1.02]"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/58 via-black/18 to-black/22" />
+              <span
+                className="absolute left-1/2 top-1/2 flex h-[58px] w-[58px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 ring-1 ring-white/40 transition-transform duration-300 group-hover/play:scale-105"
+                style={{
+                  boxShadow:
+                    "0 0 0 6px rgba(255,255,255,0.16), 0 0 28px -2px rgba(212,180,74,0.7)",
+                }}
+              >
+                <PlayTriangle className="ml-0.5" />
+              </span>
+            </button>
+          )}
 
-          <div className="absolute inset-x-3 bottom-3">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#f4c430]">
-              Julian D.
-            </p>
-            <p className="mt-0.5 text-[12px] font-medium text-white/85">
-              Studiert Wirtschaftsrecht · Führt nebenbei seine KI-Agentur
-            </p>
-          </div>
+          {!isVideoOpen ? (
+            <div className="absolute inset-x-3 bottom-3">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#f4c430]">
+                Julian D.
+              </p>
+              <p className="mt-0.5 text-[12px] font-medium text-white/85">
+                Studiert Wirtschaftsrecht · Führt nebenbei seine KI-Agentur
+              </p>
+            </div>
+          ) : null}
         </div>
 
         {/* ── Content ── */}

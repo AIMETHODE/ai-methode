@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PlayTriangle } from "@/components/ui/PlayTriangle";
 
+const JULIAN_VIDEO_URL = "https://www.youtube.com/watch?v=yWTGWVXv88Q";
+const JULIAN_VIDEO_THUMBNAIL = "https://img.youtube.com/vi/yWTGWVXv88Q/maxresdefault.jpg";
+
 /* ────────────────────────────────────────────────────────────
  * Helpers
  * ────────────────────────────────────────────────────────── */
@@ -56,30 +59,30 @@ function HeroTestimonial() {
       <div className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[420px_1fr] lg:items-center lg:gap-10 lg:p-8">
         {/* ── Video (kompakt, Querformat) ── */}
         <div className="relative aspect-video overflow-hidden rounded-[14px] lg:rounded-[16px]">
-          <div
-            className="absolute inset-0 bg-gradient-to-br from-[#2a2418] via-[#3a2e1a] to-[#14110d]"
-            aria-hidden
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 30% 25%, rgba(212,180,74,0.32), transparent 60%), radial-gradient(circle at 75% 80%, rgba(184,146,42,0.22), transparent 55%)",
-            }}
-            aria-hidden
-          />
-
-          <button
-            type="button"
-            aria-label="Video von Julian abspielen"
-            className="group/play absolute left-1/2 top-1/2 flex h-[58px] w-[58px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 ring-1 ring-white/40 transition-transform duration-300 hover:scale-105"
-            style={{
-              boxShadow:
-                "0 0 0 6px rgba(255,255,255,0.16), 0 0 28px -2px rgba(212,180,74,0.7)",
-            }}
+          <a
+            href={JULIAN_VIDEO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube-Testimonial von Julian D. öffnen"
+            className="group/play block h-full w-full"
           >
-            <PlayTriangle className="ml-0.5" />
-          </button>
+            <img
+              src={JULIAN_VIDEO_THUMBNAIL}
+              alt="Thumbnail vom YouTube-Testimonial von Julian D."
+              className="h-full w-full object-cover transition-transform duration-500 group-hover/play:scale-[1.02]"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/58 via-black/18 to-black/22" />
+            <span
+              className="absolute left-1/2 top-1/2 flex h-[58px] w-[58px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 ring-1 ring-white/40 transition-transform duration-300 group-hover/play:scale-105"
+              style={{
+                boxShadow:
+                  "0 0 0 6px rgba(255,255,255,0.16), 0 0 28px -2px rgba(212,180,74,0.7)",
+              }}
+            >
+              <PlayTriangle className="ml-0.5" />
+            </span>
+          </a>
 
           <div className="absolute inset-x-3 bottom-3">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#f4c430]">

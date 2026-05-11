@@ -1,11 +1,15 @@
 "use client";
 
-import Image from "next/image";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import { CTAButton } from "@/components/CTAButton";
 import { PlayTriangle } from "@/components/ui/PlayTriangle";
+
+/** Landingpage-Video (YouTube) — nicht gelistet ok, Embed nutzt nocookie-Domain */
+const HERO_LP_VIDEO_ID = "m-RnbqdmhRo";
+const HERO_LP_THUMB = `https://img.youtube.com/vi/${HERO_LP_VIDEO_ID}/maxresdefault.jpg`;
 
 const bullets = [
   "Klares System statt Chaos. Du weißt jeden Tag, was der nächste Schritt ist.",
@@ -15,6 +19,8 @@ const bullets = [
 ];
 
 export function Hero() {
+  const [isHeroVideoOpen, setIsHeroVideoOpen] = useState(false);
+
   return (
     <section className="bg-white pb-16 pt-10 sm:pb-20 lg:pt-14">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-start lg:gap-14 lg:px-8">
@@ -54,32 +60,42 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <div className="relative aspect-video overflow-hidden rounded-[16px] shadow-[0_12px_40px_-12px_rgba(0,0,0,0.2)] ring-1 ring-black/[0.06] sm:rounded-[20px]">
-            <Image
-              src={siteConfig.heroPortraitSrc}
-              alt=""
-              fill
-              className="object-cover object-[center_20%]"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-black/25" />
-            <div className="absolute inset-0 flex items-center justify-center">
+            {isHeroVideoOpen ? (
+              <iframe
+                className="h-full w-full"
+                src={`https://www.youtube-nocookie.com/embed/${HERO_LP_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1`}
+                title="Landingpage-Video — wie der Aufbau funktioniert"
+                loading="eager"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            ) : (
               <button
                 type="button"
-                aria-label="Video abspielen"
-                className="group/play relative flex h-[56px] w-[56px] items-center justify-center rounded-full bg-white/95 shadow-lg ring-4 ring-white/80 backdrop-blur-[2px] transition-transform duration-300 hover:scale-105 sm:h-[72px] sm:w-[72px]"
+                onClick={() => setIsHeroVideoOpen(true)}
+                aria-label="Landingpage-Video abspielen"
+                className="group/play relative block h-full w-full"
               >
-                <span
-                  className="absolute inset-0 -z-10 rounded-full opacity-0 blur-xl transition-opacity duration-300 group-hover/play:opacity-90"
-                  style={{ background: "var(--brand-gradient)" }}
-                  aria-hidden
+                <img
+                  src={HERO_LP_THUMB}
+                  alt=""
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover/play:scale-[1.02]"
+                  fetchPriority="high"
                 />
-                <PlayTriangle />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-black/25" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="group/play relative flex h-[56px] w-[56px] items-center justify-center rounded-full bg-white/95 shadow-lg ring-4 ring-white/80 backdrop-blur-[2px] transition-transform duration-300 group-hover/play:scale-105 sm:h-[72px] sm:w-[72px]">
+                    <span
+                      className="absolute inset-0 -z-10 rounded-full opacity-0 blur-xl transition-opacity duration-300 group-hover/play:opacity-90"
+                      style={{ background: "var(--brand-gradient)" }}
+                      aria-hidden
+                    />
+                    <PlayTriangle />
+                  </span>
+                </div>
               </button>
-            </div>
-            <p className="absolute bottom-3 left-3 right-3 rounded-lg bg-black/40 px-3 py-2 text-center text-[12px] font-medium text-white backdrop-blur-sm">
-              Erfahre, wie der Aufbau funktioniert
-            </p>
+            )}
           </div>
 
           <div className="mt-4 flex min-h-[4.5rem] items-center justify-between gap-4 rounded-[20px] border border-[#e8e8e8] bg-white px-4 py-4 shadow-sm sm:mt-5 sm:min-h-[6rem] sm:gap-8 sm:rounded-[26px] sm:px-8 sm:py-6">

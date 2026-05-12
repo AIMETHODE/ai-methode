@@ -1,15 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import { CTAButton } from "@/components/CTAButton";
 import { PlayTriangle } from "@/components/ui/PlayTriangle";
 
-/** Landingpage-Video (YouTube) — nicht gelistet ok, Embed nutzt nocookie-Domain */
-const HERO_LP_VIDEO_ID = "m-RnbqdmhRo";
-const HERO_LP_THUMB = `https://img.youtube.com/vi/${HERO_LP_VIDEO_ID}/maxresdefault.jpg`;
+/** Landingpage-Video (Bunny Stream) — iframe erst nach Klick, damit nichts autoplayt */
+const HERO_LP_EMBED_BASE =
+  "https://iframe.mediadelivery.net/embed/658848/98b50abb-f62a-49ff-ae28-d5bf4c61bf11";
+
+/** Poster vor Play-Klick — eigenes LP-Thumbnail */
+const HERO_LP_POSTER_SRC = "/lp-video-thumbnail.png";
 
 const bullets = [
   "Klares System statt Chaos. Du weißt jeden Tag, was der nächste Schritt ist.",
@@ -62,12 +66,11 @@ export function Hero() {
           <div className="relative aspect-video overflow-hidden rounded-[16px] shadow-[0_12px_40px_-12px_rgba(0,0,0,0.2)] ring-1 ring-black/[0.06] sm:rounded-[20px]">
             {isHeroVideoOpen ? (
               <iframe
-                className="h-full w-full"
-                src={`https://www.youtube-nocookie.com/embed/${HERO_LP_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1`}
-                title="Landingpage-Video — wie der Aufbau funktioniert"
+                src={`${HERO_LP_EMBED_BASE}?autoplay=true`}
+                title="Landingpage-Video"
+                className="absolute inset-0 h-full w-full border-0"
                 loading="eager"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                 allowFullScreen
               />
             ) : (
@@ -77,15 +80,17 @@ export function Hero() {
                 aria-label="Landingpage-Video abspielen"
                 className="group/play relative block h-full w-full"
               >
-                <img
-                  src={HERO_LP_THUMB}
+                <Image
+                  src={HERO_LP_POSTER_SRC}
                   alt=""
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover/play:scale-[1.02]"
-                  fetchPriority="high"
+                  fill
+                  className="object-cover object-center transition-transform duration-500 group-hover/play:scale-[1.02]"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-black/25" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="group/play relative flex h-[56px] w-[56px] items-center justify-center rounded-full bg-white/95 shadow-lg ring-4 ring-white/80 backdrop-blur-[2px] transition-transform duration-300 group-hover/play:scale-105 sm:h-[72px] sm:w-[72px]">
+                  <span className="relative flex h-[56px] w-[56px] items-center justify-center rounded-full bg-white/95 shadow-lg ring-4 ring-white/80 backdrop-blur-[2px] transition-transform duration-300 group-hover/play:scale-105 sm:h-[72px] sm:w-[72px]">
                     <span
                       className="absolute inset-0 -z-10 rounded-full opacity-0 blur-xl transition-opacity duration-300 group-hover/play:opacity-90"
                       style={{ background: "var(--brand-gradient)" }}

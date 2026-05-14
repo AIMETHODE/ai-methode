@@ -5,8 +5,12 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PlayTriangle } from "@/components/ui/PlayTriangle";
 
-const JULIAN_VIDEO_ID = "yWTGWVXv88Q";
-const JULIAN_VIDEO_THUMBNAIL = "https://img.youtube.com/vi/yWTGWVXv88Q/maxresdefault.jpg";
+/** Poster bleibt YouTube-Thumbnail (wie bisher) */
+const JULIAN_VIDEO_THUMBNAIL =
+  "https://img.youtube.com/vi/yWTGWVXv88Q/maxresdefault.jpg";
+/** Testimonial-Video (Bunny Stream) — iframe nach Klick */
+const JULIAN_EMBED_BASE =
+  "https://iframe.mediadelivery.net/embed/658848/c130d96e-14ca-42e0-9889-04d1579e739e";
 
 /* ────────────────────────────────────────────────────────────
  * Helpers
@@ -64,24 +68,23 @@ function HeroTestimonial() {
         <div className="relative aspect-video overflow-hidden rounded-[14px] lg:rounded-[16px]">
           {isVideoOpen ? (
             <iframe
-              className="h-full w-full"
-              src={`https://www.youtube-nocookie.com/embed/${JULIAN_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1`}
-              title="YouTube-Testimonial von Julian D."
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
+              className="absolute inset-0 h-full w-full border-0"
+              src={`${JULIAN_EMBED_BASE}?autoplay=true`}
+              title="Testimonial von Julian D."
+              loading="eager"
+              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
               allowFullScreen
             />
           ) : (
             <button
               type="button"
               onClick={() => setIsVideoOpen(true)}
-              aria-label="YouTube-Testimonial von Julian D. direkt abspielen"
-              className="group/play block h-full w-full"
+              aria-label="Testimonial von Julian D. abspielen"
+              className="group/play relative block h-full w-full"
             >
               <img
                 src={JULIAN_VIDEO_THUMBNAIL}
-                alt="Thumbnail vom YouTube-Testimonial von Julian D."
+                alt="Vorschau zum Testimonial von Julian D."
                 className="h-full w-full object-cover transition-transform duration-500 group-hover/play:scale-[1.02]"
                 loading="lazy"
               />
